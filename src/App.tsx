@@ -281,12 +281,7 @@ export default function App() {
 
         </nav>
 
-        {/* Authors Info bar */}
-        <div className="p-4 border-t border-natural-border bg-natural-secondary text-left">
-          <div className="text-[10px] font-bold text-natural-accent uppercase tracking-wider font-sans">REVIEWER BAHAN AJAR NASIONAL</div>
-          <div className="text-xs font-bold text-[#3A3A2F] mt-0.5 font-serif">Prof. Dr. Ahmad Dahlan, M.Pd</div>
-          <div className="text-[9px] text-[#8C897A] mt-1 font-sans">UIN Sunan Kalijaga Yogyakarta</div>
-        </div>
+
       </aside>
 
       {/* --- MAIN PAGE VIEW --- */}
