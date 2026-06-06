@@ -2007,29 +2007,40 @@ export default function App() {
                     
                     <div className="space-y-4">
                       {pblSyntaxList.map((step) => (
-                        <div key={step.stepNumber} className="bg-white rounded-[32px] border border-natural-border p-5 shadow-sm space-y-3">
-                          <div className="flex items-center space-x-2 border-b border-natural-border/40 pb-2">
+                        <div key={step.stepNumber} className="bg-white rounded-[32px] border border-natural-border p-6 shadow-sm space-y-4 md:space-y-5">
+                          <div className="flex items-center space-x-2 border-b border-natural-border/40 pb-3">
                             <span className="text-xs bg-natural-secondary text-natural-primary font-extrabold px-2.5 py-0.5 rounded font-mono">
                               Sintaks {step.stepNumber}
                             </span>
-                            <span className="text-xs font-bold text-natural-heading font-serif">{step.stepName}</span>
+                            <span className="text-xs sm:text-sm font-bold text-natural-heading font-serif">{step.stepName}</span>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-natural-text leading-relaxed text-justify font-serif">
-                            <div>
-                              <span className="font-bold text-natural-primary block mb-1 font-sans uppercase text-[10px] tracking-wide">Aktivitas Guru</span>
-                              <p>{step.teacherActivity}</p>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs text-natural-text leading-relaxed text-justify font-serif">
+                            <div className="space-y-1.5 p-4 rounded-2xl bg-neutral-50/50 border border-neutral-100">
+                              <span className="font-bold text-natural-primary block font-sans uppercase text-[10px] tracking-wide">Detail Aktivitas Guru (Fasilitator)</span>
+                              <p className="text-[11.5px] leading-relaxed">{step.teacherActivity}</p>
                             </div>
-                            <div>
-                              <span className="font-bold text-natural-accent block mb-1 font-sans uppercase text-[10px] tracking-wide">Skenario Berpikir Siswa</span>
-                              <p>{step.studentActivity}</p>
+                            <div className="space-y-1.5 p-4 rounded-2xl bg-natural-bg/30 border border-natural-border/30">
+                              <span className="font-bold text-natural-accent block font-sans uppercase text-[10px] tracking-wide">Skenario Berpikir Peserta Didik (Sasis)</span>
+                              <p className="text-[11.5px] leading-relaxed">{step.studentActivity}</p>
                             </div>
                           </div>
 
-                          <div className="bg-natural-bg p-3 rounded-lg border border-natural-border/50 text-[10px] text-[#8C897A] font-medium font-serif">
-                            <span className="text-natural-heading block font-semibold mb-0.5 font-sans">Pendukung Teologis: Q.S. {step.spiritualBasis}</span>
-                            <span>Mendorong pengembangan HOTS: <span className="text-natural-primary font-bold">{step.hotsElement}</span>, dengan kedalaman {step.deepLearningAspect}.</span>
+                          <div className="bg-[#FCFAF7] p-4 rounded-2xl border border-natural-border/60 text-xs text-[#7A603D] font-serif">
+                            <span className="text-natural-heading block font-semibold mb-1 font-sans uppercase text-[9px] tracking-wider">Integrasi Teologis (Quranic Foundation)</span>
+                            <p className="mb-2 font-semibold">Q.S. {step.spiritualBasis}</p>
+                            <p className="text-[11px] text-natural-text leading-relaxed">
+                              Menargetkan pengembangan indikator HOTS berupa <span className="text-natural-primary font-bold">{step.hotsElement}</span>, dengan penajaman afektif pada {step.deepLearningAspect}.
+                            </p>
                           </div>
+
+                          {step.pedagogicalAnalysis && (
+                            <div className="bg-[#F2FAF7] p-4.5 rounded-2xl border border-emerald-100 text-xs text-[#204035] font-serif leading-relaxed text-justify">
+                              <span className="text-[#103025] block font-bold mb-1 font-sans uppercase text-[9px] tracking-wider">Bedah Landasan Teoretis & Pedagogis Mendalam</span>
+                              <p className="text-[11px] font-sans text-[#406055] mb-1.5 uppercase font-semibold text-[8px] tracking-widest bg-emerald-100/40 inline-block px-1.5 py-0.5 rounded">Teori Belajar Konstruktivis Terintegrasi</p>
+                              <p className="text-[11.5px]">{step.pedagogicalAnalysis}</p>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>

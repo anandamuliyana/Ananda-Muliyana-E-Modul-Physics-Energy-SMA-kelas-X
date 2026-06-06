@@ -28,47 +28,52 @@ export const pblSyntaxList = [
   {
     stepNumber: 1,
     stepName: "Orientasi Peserta Didik pada Masalah Kontekstual-Qur'ani",
-    teacherActivity: "Guru menyajikan video atau bacaan masalah krisis kelistrikan di timur Indonesia vs pemborosan energi batubara perkotaan. Guru menyandarkannya dengan ayat QS. Yunus: 101 serta melontarkan pertanyaan pemantik konseptual.",
-    studentActivity: "Siswa membaca seksama wacana, mengisi baris pertama tabel KWL (Know, Want, Learned) di LKPD, bertukar pikiran dugaan hipotesis sebab-akibat, serta merancang rancangan rumusan masalah fisis.",
-    spiritualBasis: "Yunus [10]: 101 (Perintah mengamati benda langit dan bumi sebagai ayat)",
-    hotsElement: "Mengevaluasi kesesuaian fakta, merumuskan hipotesis, mendeteksi prasangka",
-    deepLearningAspect: "Amanah eksistensial memandang energi sebagai nikmat luhur titipan Allah"
+    teacherActivity: "Guru memulai pembelajaran dengan mengonfrontasi peserta didik lewat tayangan video krisis energi kontras (dissonansi kognitif): kontras tajam antara krisis pemadaman listrik berkepanjangan di dusun mualaf Papua terbengkalai vs kemubaziran neon gemerlap mal metropolitan bertenaga batu bara yang menyemburkan emisi karbon perusak atmosfer. Pendidik memandu jalannya dekonstruksi masalah dengan membacakan wahyu suci Q.S. Yunus: 101 secara tartil, menantang inteligensi siswa melahirkan pertanyaan kritis tingkat tinggi (HOTS) terkait batas keberlanjutan daya dukung lingkungan serta memicu dorongan kepo ilmiah terdalam (inquiry-triggering question).",
+    studentActivity: "Siswa secara proaktif menyerap data statistik krisis energi nasional, merenungkan kedalaman pesan wahyu suci yang dibacakan, dan berkolaborasi mengawali pengisian sintaks pertama Lembar Kerja Peserta Didik (LKPD) melalui pengerjaan Tabel KWL (Kolom K: What I Know dan Kolom W: What I Want to Learn). Siswa berdiskusi dinamis mengidentifikasi prasangka konseptual fisis, menetapkan indikator kesenjangan fisis harian, mengaitkan korelasi gravitasi elevasi terhadap simpanan energi potensial, serta merumuskan hipotesis praduga teknis kelompok.",
+    spiritualBasis: "Yunus [10]: 101 (Perintah eksploratif rasional-induktif mengamati realitas kosmos langit dan bumi guna menangkap kebesaran tanda-tanda keagungan Khaliq)",
+    hotsElement: "Mengevaluasi kesesuaian fakta riil empiris, merumuskan rumusan masalah dan hipotesis praduga fisis linier, mendeteksi celah bias data sosio-ekologis",
+    deepLearningAspect: "Amanah eksistensial memandang energi sebagai nikmat luhur titipan Allah SWT yang dibatasi ukuran konsumsi dan waktu",
+    pedagogicalAnalysis: "Membangun kesiapan mental belajar peserta didik melalui skema pemecahan masalah autentik (authentic problem-solving). Berdasarkan Teori Konstruktivisme Kognitif Jean Piaget, stimulasi dissonansi ini mengguncang struktur skema mental lama siswa yang pasif, merangsangnya menuju sirkuit asimilasi dan akomodasi aktif untuk memecahkan ketidakpastian. Integrasi kalam Qur'ani bertindak sebagai landasan aksiologis yang memberikan arah moralitas luhur atas hukum termodinamika universal."
   },
   {
     stepNumber: 2,
     stepName: "Mengorganisasikan Peserta Didik untuk Belajar",
-    teacherActivity: "Guru membagi sasis berpasangan kelompok heterogen (4-5 orang). Guru menegaskan pembagian peran setara (Presenter, Sekretaris, Peneliti Sains, Peneliti Tafsir Al-Qur'an), serta membagikan akses LKPD digital.",
-    studentActivity: "Siswa berkumpul tertib di kelompok, mengonfirmasi peran fungsional tim, menyamakan ritme pengerjaan tugas, serta membaca draf instruksi laboratorium praktikum virtual.",
-    spiritualBasis: "Ali Imran [3]: 104 (Keutamaan berkolaborasi kolektif)",
-    hotsElement: "Organisasi sasaran, dekomposisi masalah, aliansi tanggung jawab rasi",
-    deepLearningAspect: "Gotong royong kolaboratif, kesantunan syuro bermusyawarah mufakat"
+    teacherActivity: "Pendidik bertindak sebagai arsitek dinamika sosial kelas dengan membagi kelompok belajar secara inklusif, adekuat, dan heterogen (berisikan 4-5 siswa dengan tingkat capaian akademik bervariasi). Guru mendampingi penentuan peran fungsional tim (Ketua Tim Pengarah, Sekretaris Pencatat Data, Peneliti Sains Fisis, Peneliti Tafsir Al-Qur'an, dan Presenter) demi menegakkan akuntabilitas individu di dalam kolektivisme kelompok. Guru membagikan akses LKPD digital kolaboratif serta memandu instruksi navigasi laboratorium virtual PhET yang akan dioperasikan.",
+    studentActivity: "Siswa berkumpul tertib di kelompok masing-masing, mengonfirmasi peran fungsional berdasarkan potensi individual, menyepakati kode etik pengerjaan investigasi bersama, serta menjadwalkan pembagian tugas taktis. Anggota tim membaca petunjuk modul secara saksama, mendalami alur dekomposisi masalah rumit menjadi sub-pertanyaan mandiri, mendisposisikan mekanisme uji coba parameter fisis kelajuan dan massa, serta menyelaraskan ritme gerak belajar kelompok laksana simfoni fusi yang kohesif.",
+    spiritualBasis: "Ali Imran [3]: 104 (Keutamaan menggalang dakwah kooperatif-kolektif pembawa kemaslahatan terorganisir untuk membendung kerusakan fasad)",
+    hotsElement: "Dekomposisi masalah struktural menjadi bagian taktis, pembagian peran kerja fungsional, taksiran optimasi sumber daya tim",
+    deepLearningAspect: "Karakter gotong-royong kolaboratif (Ta'awun), keadaban musyawarah (Syuro), kepatuhan fungsional terhadap struktur kepemimpinan",
+    pedagogicalAnalysis: "Menegakkan pilar Sosial Konstruktivisme Lev Vygotsky. Melalui kerja kelompok heterogen, peserta didik berinteraksi di dalam Zone of Proximal Development (ZPD) yang ideal, memfasilitasi terjadinya bantuan kognitif sebaya (peer scaffolding). Proses aliansi tugas ini tidak sekadar melatih kecerdasan intelektual, melainkan mengasah kecerdasan emosional, negosiasi konseptual, dan kepemimpinan sosial interdisipliner."
   },
   {
     stepNumber: 3,
     stepName: "Membimbing Penyelidikan Mandiri dan Kelompok",
-    teacherActivity: "Guru mendampingi sasis bereksperimen dengan 5 simulator virtual, memberikan scaffolding scaffolding (pertanyaan sokratis penuntun) sasis sela menjumpai rintangan pengerjaan hitungan fisika.",
-    studentActivity: "Siswa memanipulasi parameter di virtual lab, melacak fluktuasi angka, menguji kebenaran rumus, serta melayangkan pencantuman ayat teologis pendukung yang relevan menggunakan peranti LKPD.",
-    spiritualBasis: "Al-Isra [17]: 36 (Urgensi verifikasi pendengaran, penglihatan, akal empiris)",
-    hotsElement: "Menganalisis pola tren, inferensi matematis, kalkulasi konversi mekanis",
-    deepLearningAspect: "Kejujuran merekam data empiris, ketelitian saksama tadabbur ayat kauniyah"
+    teacherActivity: "Guru bergerak lincah sebagai fasilitator investigasi, menginspeksi kemajuan eksperimen tiap kelompok, dan melontarkan pertanyaan sokratik (socratic questioning) yang memantik nalar dibanding langsung menyodorkan rumus instan. Guru memberikan scaffolding bersyarat apabila kelompok menemui jalan buntu (misal: kesalahan perhitungan mekanis, kalibrasi generator virtual, or salah sintaks data). Pendidik mendorong pengulangan running simulator virtual berulang kali demi melatih ketelitian pembacaan parameter presisi.",
+    studentActivity: "Siswa mengidentifikasi data sains secara empiris melalui manipulasi peubah bebas-terikat di simulator virtual, mencatat fluktuasi grafik total energi mekanik, membuktikan hilangnya energi kalor gesek, serta memverifikasi kesahihan persamaan matematis dengan realitas fisis simulasi. Di saat yang sama, siswa melakukan pelacakan literatur tafsir sains kontemporer untuk melacak isyarat ayat kauniyah pendukung (seperti mengaitkan Q.S. Yasin: 80 tentang klorofil kayu hijau dengan proses fotosintesis penghasil biomassa biogas) lalu menginputkan hasilnya di LKPD.",
+    spiritualBasis: "Al-Isra [17]: 36 (Urgensi verifikasi akurat menggunakan panca indera pendengaran, penglihatan, dan olah kritis akal kalbu sebelum mengambil simpulan fakta)",
+    hotsElement: "Menganalisis pola kecenderungan grafik linier, penalaran induktif-deduktif, pembuktian kesamaan rumus fisik dengan satuan Internasional (SI)",
+    deepLearningAspect: "Amanah dan jujur merekam data empiris tanpa rekayasa (Siddiq), ketelitian observasi, ketajaman tadabbur keteraturan hukum alam",
+    pedagogicalAnalysis: "Menerapkan prinsip utama Pembelajaran Penemuan Terbimbing (Discovery Learning) Jerome Bruner. Eksplorasi aktif pada simulator virtual memandu siswa merumuskan pola hubungan kausalitas fisika secara mandiri (inductive reasoning), memicu letupan rasa percaya diri penemu (Eureka effect). Pengaktifan koordinasi tangan, mata, dan otak saat memanipulasi variabel mengikat materi abstrak fisika ke dalam jangkar kognitif jangka panjang yang kokoh."
   },
   {
     stepNumber: 4,
     stepName: "Mengembangkan dan Menyajikan Hasil Karya (Presentasi)",
-    teacherActivity: "Guru mempersilakan presenter kelompok memaparkan lisan hasil kerja, mengoordinasi sanggahan kritis-ilmiah antar kelompok secara kondusif dan santun.",
-    studentActivity: "Presenter kelompok memaparkan presentasi model perhitungan fisika dan kaitannya dengan ajaran Quran pelestarian alam. Sekretaris mencatatkan umpan balik masukan dari audiens.",
-    spiritualBasis: "Al-Hujurat [49]: 6 (Asas tabayyun verifikasi kebenaran sajian argumentasi)",
-    hotsElement: "Sintesis argumentasi logis, menangkis sanggahan konseptual secara akademis",
-    deepLearningAspect: "Kesantunan verbal ilmiah, kerendahan hati mengevaluasi masukan kritis rekan eksternal"
+    teacherActivity: "Guru mengelola jalannya forum seminar ilmiah miniatural kelas dengan menegakkan tata krama diskusi yang santun, adil, dan objektif. Pendidik memfasilitasi kelompok presenter menyajikan presentasi LKPD digital, rancangan komparasi energi alternatif, serta diagram teologi mereka, kemudian bertindak sebagai moderator yang mengarahkan sesi tanya jawab kritis, evaluasi tanding, serta sanggahan konseptual berbasis bukti secara akademis.",
+    studentActivity: "Siswa menyampaikan paparan interaktif mengenai model energi kelolaan tim, menjabarkan formula matematis konversi daya turbin air, dan mengaitkannya dengan panggilan moral Qur'ani tentang pelestarian ekosistem. Kelompok audiens mengevaluasi paparan secara kritis (peer review), mengajukan counter-argumentasi logis, mendeteksi cacat penalaran (fallacy) pada tim penyaji, serta menyumbangkan saran perbaikan. Sekretaris tim mencatat saksama masukan konstruktif forum.",
+    spiritualBasis: "Al-Hujurat [49]: 6 (Asas tabayyun--metodologi konfirmasi kebenaran klaim or argumentasi demi menghindari musibah salah vonis data)",
+    hotsElement: "Menyintesis argumen logis multidimensi, menyusun tanggapan kritis berbasis dalil fisis-syar'i, mengevaluasi kekuatan posisi argumen tanding",
+    deepLearningAspect: "Keberanian menyuarakan kebenaran (Fathonah), kerendahan hati mengakui kekurangan draf ilmiah, kesantunan bertutur kata akademis",
+    pedagogicalAnalysis: "Mendorong peserta didik mencapai kompetensi tingkat tinggi Bloom: Evaluasi (C5) dan Kreasi (C6). Proses mengubah data mentah LKPD menjadi struktur presentasi menantang siswa melakukan penyusunan ulang skema kognitif (cognitive restructuring). Debat ilmiah ini memantapkan ketangkasan mengolah argumen di bawah tekanan, memperjelas retorika berbicara publik, dan mendewasakan emosi sosial siswa terintegrasi kearifan."
   },
   {
     stepNumber: 5,
     stepName: "Menganalisis dan Mengevaluasi Proses Pemecahan Masalah",
-    teacherActivity: "Guru meluruskan miskonsepsi rumus fisika, menayangkan peta konsep final, membimbing refleksi spiritual ekologis, serta membukakan tes kuis sumatif HOTS.",
-    studentActivity: "Siswa melengkapi draf isian LKPD, menuliskan esai refleksi kepemimpinan hijau energi di sela draf kolom, dan memberesi cleanup area kerja praktikum.",
-    spiritualBasis: "Ar-Rahman [55]: 7-8 (Larangan merusak mizan keseimbangan sirkuit bumi)",
-    hotsElement: "Metakognisi efektivitas problem solving, koreksi draf miskonsepsi",
-    deepLearningAspect: "Komitmen moral kepedulian ekologis konkrit (hemat listrik anti-israf)"
+    teacherActivity: "Guru merangkum keseluruhan jalannya pembelajaran, meluruskan salah kaprah rumus mekanis secara tuntas, dan membentangkan peta konsep konvergensi sains-Islam pada papan tulis. Pendidik membimbing refleksi spiritual terdalam mengenai peran khalifah fil-ardh menyangkut kedaulatan energi nasional, mengaitkan perilaku penutupan steker standby power dengan jihad pelestarian iklim, memverifikasi keterisian LKPD, serta menyodorkan evaluasi instrumen tes HOTS.",
+    studentActivity: "Siswa mengevaluasi efisiensi langkah problem-solving yang baru saja digeluti, melakukan swa-koreksi atas bias bias data tim, merampungkan pengisian simpulan target (Learned) pada Lembar KWL LKPD, dan menyalin esai janji komitmen perilaku eco-akhlaq di dalam kehidupan nyata sehari-hari. Siswa bersama-sama membereskan peralatan, membersihkan area kerja digital, serta menutup forum kelas dengan zikir hamdalah syukur atas karunia intelektual.",
+    spiritualBasis: "Ar-Rahman [55]: 7-8 (Larangan keras melanggar, merusak, atau merobek batas hukum keseimbangan ('mizan') ekosistem yang telah dipasang presisi di bumi)",
+    hotsElement: "Koreksi metakognisi atas performa belajar serta kekeliruan bernalar, sintesis konvergensi spiritual-sains, perancangan rencana aksi ramah lingkungan",
+    deepLearningAspect: "Konsistensi pengamalan ilmu (Eco-Akhlaq), menyetop kemubaziran pasif (anti israf), komitmen aktif merawat mizan kosmik ciptaan-Nya",
+    pedagogicalAnalysis: "Menumbuhkan kapasitas regulasi metakognitif (metacognitive regulation). Siswa diarahkan untuk bercermin secara kritis: 'apa yang telah saya pelajari?', 'bagaimana cara berrasional?', dan 'apa konsekuensi moral pemahaman fisis ini bagi gaya hidup saya?'. Berdasarkan pedagogi reflektif John Dewey, tahap reorientasi spiritual dan swa-evaluasi ini sangat krusial guna menjamin ilmu teoretis bertransformasi sebagai nilai-nilai akhlak hidup (lifelong wisdom)."
   }
 ];
 
