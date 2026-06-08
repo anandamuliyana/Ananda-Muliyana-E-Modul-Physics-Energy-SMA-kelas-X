@@ -3,6 +3,7 @@ import {
   ClipboardList, 
   Award, 
   Download, 
+  Upload,
   Printer, 
   Layers, 
   HelpCircle, 
@@ -87,6 +88,8 @@ export default function InteractiveLKPD() {
   });
   const [meetings, setMeetings] = useState<Record<1 | 2 | 3 | 4, MeetingResponses>>(initialMeetings);
   const [isExported, setIsExported] = useState(false);
+  const [importSuccess, setImportSuccess] = useState(false);
+  const [importError, setImportError] = useState<string | null>(null);
 
   // States for interactive spreadsheet components
   // Meeting 1 spreadsheets
@@ -153,6 +156,64 @@ export default function InteractiveLKPD() {
     setIsExported(false);
   };
 
+  const handleImportJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const parsed = JSON.parse(event.target?.result as string);
+        
+        if (parsed.informasiPeserta) {
+          setStudentInfo(parsed.informasiPeserta);
+        }
+        if (parsed.pembagianPeran) {
+          setAssignedRoles(parsed.pembagianPeran);
+        }
+        if (parsed.evaluasiEcoAkhlaq) {
+          setEcoAkhlaqScores(parsed.evaluasiEcoAkhlaq);
+        }
+        if (parsed.lembarKerja) {
+          // Backward compatibility check for deep nesting
+          setMeetings(parsed.lembarKerja);
+        }
+        
+        if (parsed.spreadsheetData) {
+          const sd = parsed.spreadsheetData;
+          if (sd.pertemuan1) {
+            if (sd.pertemuan1.m1Mass !== undefined) setM1Mass(sd.pertemuan1.m1Mass);
+            if (sd.pertemuan1.m1Velocity !== undefined) setM1Velocity(sd.pertemuan1.m1Velocity);
+            if (sd.pertemuan1.m1Height !== undefined) setM1Height(sd.pertemuan1.m1Height);
+          }
+          if (sd.pertemuan2?.m2Appliances) {
+            setM2Appliance(sd.pertemuan2.m2Appliances);
+          }
+          if (sd.pertemuan3) {
+            if (sd.pertemuan3.m3Matrix) setM3Matrix(sd.pertemuan3.m3Matrix);
+            if (sd.pertemuan3.m3Feedstock !== undefined) setM3Feedstock(sd.pertemuan3.m3Feedstock);
+            if (sd.pertemuan3.m3GasYield !== undefined) setM3GasYield(sd.pertemuan3.m3GasYield);
+          }
+          if (sd.pertemuan4?.m4Vampires) {
+            setM4Vampires(sd.pertemuan4.m4Vampires);
+          }
+        }
+
+        setImportSuccess(true);
+        setImportError(null);
+        setIsExported(false);
+        // Clear message after 5 seconds
+        setTimeout(() => setImportSuccess(false), 5000);
+      } catch (err) {
+        setImportError("Format berkas JSON tidak valid atau rusak. Pastikan Anda mengunggah file cadangan LKPD yang sesuai.");
+        setImportSuccess(false);
+        setTimeout(() => setImportError(null), 5000);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = ""; // Reset file input
+  };
+
   const exportAsJSON = () => {
     const backupObj = {
       informasiPeserta: studentInfo,
@@ -168,14 +229,25 @@ export default function InteractiveLKPD() {
       timestamp: new Date().toISOString(),
       metode: "PBL-Qur'an Integrated Learning (PQIL)"
     };
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupObj, null, 2));
+    
+    // Web safe Blob download implementation (sandbox & iframe resilient)
+    const jsonString = JSON.stringify(backupObj, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    
     const downloadAnchor = document.createElement('a');
-    downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `LKPD_Fisika_4_Pertemuan_${studentInfo.kelompok || "Kelompok"}.json`);
+    downloadAnchor.href = url;
+    downloadAnchor.download = `LKPD_Fisika_4_Pertemuan_${studentInfo.kelompok || "Kelompok"}.json`;
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
-    downloadAnchor.remove();
+    
+    // Cleanup reference
+    document.body.removeChild(downloadAnchor);
+    URL.revokeObjectURL(url);
+    
     setIsExported(true);
+    // Clear message after 5 seconds
+    setTimeout(() => setIsExported(false), 5000);
   };
 
   const triggerPrint = () => {
@@ -244,7 +316,21 @@ export default function InteractiveLKPD() {
           </div>
         </div>
 
-        <div className="flex space-x-2 font-sans shrink-0">
+        <div className="flex flex-wrap gap-2 font-sans shrink-0">
+          <input
+            type="file"
+            id="unggah-progress-lkpd"
+            accept=".json"
+            onChange={handleImportJSON}
+            className="hidden"
+          />
+          <label
+            htmlFor="unggah-progress-lkpd"
+            className="px-4 py-2 bg-white border border-natural-border text-natural-primary hover:bg-natural-secondary rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 cursor-pointer shadow-xs"
+          >
+            <Upload className="w-4 h-4" />
+            <span>Unggah Progress (JSON)</span>
+          </label>
           <button
             onClick={exportAsJSON}
             className="px-4 py-2 bg-natural-primary hover:opacity-90 text-white rounded-xl text-xs font-bold transition-all flex items-center space-x-1.5 shadow-md cursor-pointer"
@@ -262,8 +348,22 @@ export default function InteractiveLKPD() {
         </div>
       </div>
 
+      {importSuccess && (
+        <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-xs font-bold text-emerald-800 flex items-center space-x-1.5 font-serif print:hidden animate-fadeIn">
+          <CheckCircle className="w-4 h-4 text-emerald-600" />
+          <span>Alhamdulillah, progress pengerjaan kelompok berhasil diimpor! Setiap formulir, draf peran, spreadsheet, dan esai reflektif telah terpulihkan.</span>
+        </div>
+      )}
+
+      {importError && (
+        <div className="bg-red-50 border border-red-200 p-4 rounded-2xl text-xs font-bold text-red-800 flex items-center space-x-1.5 font-serif print:hidden animate-fadeIn">
+          <AlertCircle className="w-4 h-4 text-red-600" />
+          <span>{importError}</span>
+        </div>
+      )}
+
       {isExported && (
-        <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-xs font-bold text-emerald-800 flex items-center space-x-1.5 font-serif print:hidden animate-bounce">
+        <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-xs font-bold text-emerald-800 flex items-center space-x-1.5 font-serif print:hidden animate-fadeIn">
           <Award className="w-4 h-4 text-emerald-600" />
           <span>Alhamdulillah, berkas pengerjaan siswa dalam format JSON berhasil dicadangkan dan terunduh ke komputer Anda.</span>
         </div>
@@ -1175,7 +1275,7 @@ export default function InteractiveLKPD() {
                       );
                     })}
                     <tr className="bg-[#F4FDFB] font-bold font-sans">
-                      <td className="p-4 uppercase colSpan={3}">AKUMULASI SKOR INDEKS ECO-AKHLAQ KELOMPOK (ZERO-ISRAF LEVEL):</td>
+                      <td className="p-4 uppercase" colSpan={3}>AKUMULASI SKOR INDEKS ECO-AKHLAQ KELOMPOK (ZERO-ISRAF LEVEL):</td>
                       <td className="p-4 text-right text-emerald-800 text-sm font-black font-mono">
                         {Object.values(ecoAkhlaqScores).reduce((acc: number, curr: string) => {
                           const pts = curr === "Sangat Sering" ? 4 : curr === "Sering" ? 3 : curr === "Kadang-kadang" ? 2 : 1;
